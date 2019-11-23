@@ -22,8 +22,8 @@
                                 <h1 class="text-lg font-medium uppercase p-3 pb-0 text-center tracking-wide">
                                     100 - 4,999 SMS
                                 </h1>
-                                <h2 class="text-sm text-gray-500 text-center pb-6"><span class="ml-8 text-3xl font-bold text-ice-blue">0,25</span> {{t('lei')}} / 1 sms</h2>
-                                <p class="text-center">{{t('test_package')}}. <br>{{t('on_convertion')}} 1%, {{t('client_price')}} 25 {{t('lei')}}.</p>
+                                <h2 class="text-sm text-gray-500 text-center pb-6"><span class="ml-8 text-3xl font-bold text-ice-blue">0,15</span> {{t('lei')}} / 1 sms</h2>
+                                <p class="text-center">{{t('test_package')}}. <br>{{t('on_convertion')}} 1%, {{t('client_price')}} 15 {{t('lei')}}.</p>
                             </div>
 
                             <div class="flex flex-wrap mt-3 px-6">
@@ -91,8 +91,8 @@
                             <h1 class="text-lg font-medium uppercase p-3 pb-0 text-center tracking-wide">
                                 5,000 - 99,999 SMS
                             </h1>
-                            <h2 class="text-sm text-gray-500 text-center pb-6"><span class="text-3xl text-ice-blue ml-8 font-bold">0,23</span> {{t('lei')}} / 1 sms</h2>
-                            <p class="text-center">{{t('package2')}}. <br>{{t('on_convertion')}} 3%, {{t('client_price')}} 10 {{t('lei')}}.</p>
+                            <h2 class="text-sm text-gray-500 text-center pb-6"><span class="text-3xl text-ice-blue ml-8 font-bold">0,13</span> {{t('lei')}} / 1 sms</h2>
+                            <p class="text-center">{{t('package2')}}. <br>{{t('on_convertion')}} 3%, {{t('client_price')}} 5 {{t('lei')}}.</p>
                         </div>
                         <div class="flex pl-12 justify-start sm:justify-start mt-3">
                             <ul>
@@ -137,8 +137,8 @@
                                 <h1 class="text-lg font-medium uppercase p-3 pb-0 text-center tracking-wide">
                                     100,000 - 1,000,000 SMS
                                 </h1>
-                                <h2 class="text-sm text-gray-500 text-center ml-8 pb-6"><span class="text-3xl text-ice-blue font-bold">0,20</span> {{t('lei')}} / 1 sms</h2>
-                                <p class="text-center">{{t('package3')}}! <br>{{t('on_convertion')}} 5%, {{t('client_price')}} 4 {{current_locale === 'ru' ? t('leu') : t('lei')}}.</p>
+                                <h2 class="text-sm text-gray-500 text-center ml-8 pb-6"><span class="text-3xl text-ice-blue font-bold">0,10</span> {{t('lei')}} / 1 sms</h2>
+                                <p class="text-center">{{t('package3')}}! <br>{{t('on_convertion')}} 5%, {{t('client_price')}} 2 {{current_locale === 'ru' ? t('leu') : t('lei')}}.</p>
                             </div>
                             <div class="flex flex-wrap mt-3 px-6">
                                 <ul>
