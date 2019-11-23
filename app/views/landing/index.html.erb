@@ -1,0 +1,26 @@
+<div class="bg-gray-800 w-full">
+  <div class="container mx-auto flex flex-row sm:items-center xl:pb-16 xl:px-0 px-4">
+    <div class="w-1/2 text-white flex flex-col">
+      <h1 class="sm:text-4xl text-xl text-center font-weight-bolder sm:mb-4"><%= t(:clients_for_your_business) %><br>
+        <%= t(:by_lowest_price_on_market) %></h1>
+
+      <div id="statistics"></div>
+      <p class="text-xs sm:text-base sm:mb-5 text-center"><%= t(:landing_sub_phrase2) %></p>
+       <p class="text-xs sm:text-base sm:mb-5 text-center"><%= t(:leave_request) %></p>
+      <form class="xl:mt-4 mt-8 flex justify-center hidden xl:flex">
+        <button class="modal-open px-8 rounded-full tracking-widest bg-ice-blue hover:bg-gray-800 text-gray-800 font-bold p-4 uppercase border-ice-blue hover:text-ice-blue hover:border-ice-blue border-t border-b border-r border-l"><%= t(:request_button) %></button>
+      </form>
+    </div>
+    <div class="w-1/2 xl:pt-8 xl:items-center flex justify-end">
+      <%= image_pack_tag 'banner.png', width: "600", alt: "Logo" %>
+    </div>
+  </div>
+</div>
+
+<%= render 'layouts/modal' %>
+
+<%= render "layouts/prices" %>
+
+<%= render "layouts/main_page_info" %>
+
+<%= render "layouts/main_page_b2b" %>

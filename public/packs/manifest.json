@@ -1,0 +1,25 @@
+{
+  "application.js": "/packs/js/application-5ed1a6569297ce78febe.js",
+  "application.js.map": "/packs/js/application-5ed1a6569297ce78febe.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-5ed1a6569297ce78febe.js"
+      ],
+      "js.map": [
+        "/packs/js/application-5ed1a6569297ce78febe.js.map"
+      ]
+    }
+  },
+  "media/css/YandexSansText-Regular.eot": "/packs/media/css/YandexSansText-Regular-24660ebff84224c8ad650cf780f9bea2.eot",
+  "media/css/YandexSansText-Regular.ttf": "/packs/media/css/YandexSansText-Regular-3ee38ff1f25156624185ce1a127477ca.ttf",
+  "media/css/YandexSansText-Regular.woff": "/packs/media/css/YandexSansText-Regular-0c33a22c6e39a607e543a4038a5451a7.woff",
+  "media/css/YandexSansText-Regular.woff2": "/packs/media/css/YandexSansText-Regular-db59f68879bbd8089fed0492b37d1fcf.woff2",
+  "media/iconfont/MaterialIcons-Regular.eot": "/packs/media/iconfont/MaterialIcons-Regular-96c47680.eot",
+  "media/iconfont/MaterialIcons-Regular.ttf": "/packs/media/iconfont/MaterialIcons-Regular-d120c85b.ttf",
+  "media/iconfont/MaterialIcons-Regular.woff": "/packs/media/iconfont/MaterialIcons-Regular-29b882f0.woff",
+  "media/iconfont/MaterialIcons-Regular.woff2": "/packs/media/iconfont/MaterialIcons-Regular-0509ab09.woff2",
+  "media/images/banner.png": "/packs/media/images/banner-2bc1388c83c0b2f8a41cd035caecdf07.png",
+  "media/images/favicon.ico": "/packs/media/images/favicon-72bd1b3e1f2d7c54611ada43d647550a.ico",
+  "media/images/logo.png": "/packs/media/images/logo-b7ef0369463a13c124ae5c9fda4d0fcc.png"
+}

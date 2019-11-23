@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SMS Reklama</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="<%= asset_pack_path 'media/images/favicon.ico' %>" type="image/x-icon">
+  </head>
+
+<div class="absolute w-full flex flex-col">
+    <%= render "layouts/header" %>
+<body lang="<%= I18n.locale %>" class="font-sans leading-normal tracking-normal">
+
+  <div class="bg-bottom bg-no-repeat bg-cover">
+    <%= yield %>
+
+    <%= render "layouts/footer" %>
+  </div>
+
+
+</body>
+
+</div>
+
+</html>
