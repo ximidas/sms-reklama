@@ -45,7 +45,7 @@
             </div>
             <div class="mb-4 text-center">
 
-                {{ t('price') }}: <span class="text-ice-blue font-bold" v-model.number="final_price">{{formatPrice((sms_quantity > 4999 && sms_quantity < 99999 ? 0.23 : (sms_quantity > 99999 ? 0.20 : 0.25)) * sms_quantity)}}</span>
+                {{ t('price') }}: <span class="text-ice-blue font-bold" v-model.number="final_price">{{formatPrice((sms_quantity > 4999 && sms_quantity < 99999 ? 0.13 : (sms_quantity > 99999 ? 0.10 : 0.15)) * sms_quantity)}}</span>
                 <span class="text-sm text-gray-500">{{ t('lei') }}</span>
 
             </div>
