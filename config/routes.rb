@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     namespace :admin do
 
       root 'admins#index'
+      get 'close_order_request/:id', to: 'admins#close_order_request', as: 'close_order_request'
 
     end
 

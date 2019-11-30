@@ -8,7 +8,10 @@ class CreateOrderRequest < ActiveRecord::Migration[6.0]
       t.float :price
       t.text :business_description
       t.text :target_audience_description
-      t.text :type
+      t.text :type_order
+      t.integer :status
+      t.datetime :created_at
+      t.datetime :updated_at
     end
   end
 end

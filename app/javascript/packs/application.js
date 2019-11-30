@@ -2,6 +2,7 @@
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
+//production: RAILS_ENV=production bundle exec rails webpacker:compile
 
 require('@rails/ujs').start()
 require('turbolinks').start()
@@ -33,6 +34,7 @@ const favicons = require.context('../images', true)
 import Vue from 'vue'
 import App from '../app'
 import RequestForm from '../components/RequestForm'
+import FormB2b from '../components/FormB2b'
 import ChoosePackage from "../components/ChoosePackage";
 import Statistics from "../components/Statistics";
 import axios from 'axios'
@@ -57,6 +59,16 @@ document.addEventListener('turbolinks:load', () => {
         const requestform = new Vue({
             el,
             render: h => h(RequestForm, vsSelect, vsIcon, { props }),
+        })
+    }
+})
+
+document.addEventListener('turbolinks:load', () => {
+    const el = document.getElementById("formb2b")
+    if (el != null) {
+        const formb2b = new Vue({
+            el,
+            render: h => h(FormB2b, vsSelect, vsIcon),
         })
     }
 })

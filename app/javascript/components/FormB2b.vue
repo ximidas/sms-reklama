@@ -1,79 +1,80 @@
 <template>
-    <div>
-    <div class="modal-content py-4 text-left px-6" v-if="!order">
-        <!--Title-->
-        <div class="flex justify-between items-center pb-3">
-            <p class="text-2xl font-bold">{{ t('request') }}</p>
+    <div class="flex justify-center">
+        <button @click="showModal = true" class="mt-3 mb-3 text-lg font-semibold
+	bg-black text-white rounded-lg
+	px-6 py-3 block shadow-xl hover:bg-gray-700">
+            {{t('request_button')}}
+        </button>
+        <vue-tailwind-modal class="z-40" :showing="showModal" @close="showModal = false">
+
+            <div class="modal-content py-4 text-left px-6" v-if="!order">
+            <!--Title-->
+            <div class="flex justify-between items-center pb-3">
+                <p class="text-2xl font-bold">{{ t('request') }}</p>
+            </div>
+
+            <form class="x-8 pt-6 pb-8 mb-4">
+                <div class="mb-4">
+                    <label class="block text-black text-sm font-bold mb-2">
+                        {{ t('name') }}
+                    </label>
+                    <input v-model="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" :placeholder="t('name')">
+                </div>
+
+
+                <div class="mb-4">
+                    <label class="block text-black text-sm font-bold mb-2">
+                        {{ t('connection') }}
+                    </label>
+                    <input v-model="connection" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" :placeholder="t('connection')">
+                </div>
+
+                <div class="mb-4">
+                    <div class="inline-block relative w-64">
+                        <vs-select
+                                multiple
+                                color="#00b8d6"
+                                :label="t('choose_cities_or_city')"
+                                v-model="select_cities"
+                        >
+                            <vs-select-item :key="index" :value="getRegionName(region)" :text="getRegionName(region)" v-for="(region,index) in regions" />
+                        </vs-select>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-black text-sm font-bold mb-2">
+                        {{ t('sms_quantity') }}
+                    </label>
+                    <input v-model.number="sms_quantity" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number">
+                </div>
+                <div class="mb-4 text-center">
+
+                    {{ t('price') }}: <span class="text-ice-blue font-bold" v-model.number="final_price">{{formatPrice((sms_quantity > 4999 && sms_quantity < 99999 ? 0.13 : (sms_quantity > 99999 ? 0.10 : 0.15)) * sms_quantity)}}</span>
+                    <span class="text-sm text-gray-500">{{ t('lei') }}</span>
+
+                </div>
+                <div class="mb-4">
+                    <label class="block text-black text-sm font-bold mb-2">
+                        {{ t('business_describe') }}
+                    </label>
+                    <textarea class="w-full shadow-inner bg-gray-100 p-4 border-1" v-model="business_description" :placeholder="t('business_describe_example')" rows="1"></textarea>
+                </div>
+                <div class="flex justify-end pt-2">
+                    <a href="#" class="modal-close px-4 p-3 text-ice-blue hover:text-grey-700">{{ t('close') }}</a>
+                    <a href="javascript:void(0)" @click="saveOrderRequest()" class="px-4 bg-ice-blue p-3 rounded-full text-white hover:bg-gray-100 hover:text-ice-blue hover:border-ice-blue border-t border-b border-r border-l mr-2">{{ t('send') }}<i v-if="loading" style="font-size: 18px;" class="fa fas fa-spinner fa-spin fa-3x fa-fw"></i></a>
+                </div>
+            </form>
+
         </div>
 
-        <form class="x-8 pt-6 pb-8 mb-4">
-            <div class="mb-4">
-                <label class="block text-black text-sm font-bold mb-2">
-                    {{ t('name') }}
-                </label>
-                <input v-model="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" :placeholder="t('name')">
-            </div>
-
-
-            <div class="mb-4">
-                <label class="block text-black text-sm font-bold mb-2">
-                    {{ t('connection') }}
-                </label>
-                <input v-model="connection" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" :placeholder="t('connection')">
-            </div>
-
-            <div class="mb-4">
-                <div class="inline-block relative w-64">
-                    <vs-select
-                            multiple
-                            autocomplete
-                            class="selectExample"
-                            color="#00b8d6"
-                            :label="t('choose_cities_or_city')"
-                            v-model="select_cities"
-                    >
-                        <vs-select-item :key="index" :value="getRegionName(region)" :text="getRegionName(region)" v-for="(region,index) in regions" />
-                    </vs-select>
+            <div class="modal-content py-4 text-left px-6" v-if="order">
+                <div class="flex justify-between items-center pb-3">
+                    <p class="text-2xl font-bold">{{ t('request_succes') }}</p>
                 </div>
             </div>
+        </vue-tailwind-modal>
 
-            <div class="mb-4">
-                <label class="block text-black text-sm font-bold mb-2">
-                    {{ t('sms_quantity') }}
-                </label>
-                <input v-model.number="sms_quantity" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number">
-            </div>
-            <div class="mb-4 text-center">
-
-                {{ t('price') }}: <span class="text-ice-blue font-bold" v-model.number="final_price">{{formatPrice((sms_quantity > 4999 && sms_quantity < 99999 ? 0.13 : (sms_quantity > 99999 ? 0.10 : 0.15)) * sms_quantity)}}</span>
-                <span class="text-sm text-gray-500">{{ t('lei') }}</span>
-
-            </div>
-            <div class="mb-4">
-                <label class="block text-black text-sm font-bold mb-2">
-                    {{ t('business_describe') }}
-                </label>
-            <textarea class="w-full shadow-inner bg-gray-100 p-4 border-1" v-model="business_description" :placeholder="t('business_describe_example')" rows="1"></textarea>
-            </div>
-            <div class="mb-4">
-                <label class="block text-black text-sm font-bold mb-2">
-                    {{ t('target_audience_describe') }}
-                </label>
-                <textarea class="w-full shadow-inner bg-gray-100 p-4 border-1" v-model="target_audience" :placeholder="t('target_audience_describe_example')" rows="3"></textarea>
-            </div>
-            <div class="flex justify-end pt-2">
-                <a href="#" class="modal-close px-4 p-3 text-ice-blue hover:text-grey-700">{{ t('close') }}</a>
-                <a href="javascript:void(0)" @click="saveOrderRequest()" class="px-4 bg-ice-blue p-3 rounded-full text-white hover:bg-gray-100 hover:text-ice-blue hover:border-ice-blue border-t border-b border-r border-l mr-2">{{ t('send') }}<i v-if="loading" style="font-size: 18px;" class="fa fas fa-spinner fa-spin fa-3x fa-fw"></i></a>
-            </div>
-        </form>
-
-    </div>
-
-    <div class="modal-content py-4 text-left px-6" v-if="order">
-        <div class="flex justify-between items-center pb-3">
-            <p class="text-2xl font-bold">{{ t('request_succes') }}</p>
-        </div>
-    </div>
     </div>
 </template>
 
@@ -81,11 +82,16 @@
     import 'vuesax/dist/vuesax.css'
     import 'material-icons/iconfont/material-icons.css';
     import i18n_mixin from "./mixins/i18n_mixin";
+    import VueTailwindModal from 'vue-tailwind-modal'
     export default {
-        props: ['sms_quantity'],
         mixins: [i18n_mixin],
+        components: {
+            VueTailwindModal,
+        },
         data () {
             return {
+                sms_quantity: 3300,
+                showModal: false,
                 regions: null,
                 select_cities:[],
                 name: null,
@@ -113,7 +119,7 @@
                     price: this.final_price,
                     business_description: this.business_description,
                     target_audience: this.target_audience,
-                    type: 'b2c'
+                    type: 'b2b'
                 }).then(response => {
                     response.status === 200 ? this.order = true : this.order = false
                 });
@@ -272,8 +278,15 @@
         }
     }
 </script>
-<style>
+
+<style scoped>
     .modal {
         transition: opacity 0.25s ease;
+    }
+
+    .modalOverlay {
+        top: 0;
+        left: 0;
+        position: fixed;
     }
 </style>

@@ -7,39 +7,41 @@
     </div>
 
     <div class="w-1/2 hidden sm:w-1/2 sm:flex justify-end">
+<!--
 
-      <%= link_to t(:services), '/', class: "relative block py-6 px-2 lg:p-6 text-sm text-white text-lg font-bold hover:text-ice-blue" %>
+      <%#= link_to t(:services), '/', class: "relative block py-6 px-2 lg:p-6 text-sm text-white text-lg font-bold hover:text-ice-blue" %>
 
 
 
-      <%= link_to t(:vacancies), '/', class: "relative block py-6 px-2 lg:p-6 text-sm text-white text-lg font-bold hover:text-ice-blue" %>
+      <%#= link_to t(:vacancies), '/', class: "relative block py-6 px-2 lg:p-6 text-sm text-white text-lg font-bold hover:text-ice-blue" %>
 
-      <% if current_user %>
+      <%# if current_user %>
 
         <div class="relative inline-block">
           <button onclick="document.getElementById('DropDownMenu').classList.toggle('invisible')" class="drop-button relative block py-6 px-2 lg:p-6 text-sm text-white text-lg font-bold hover:text-ice-blue">
             <i class="fas fa-user"></i>
-            <%= current_user.email %>
+            <%#= current_user.email %>
             <svg class="h-3 fill-current inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
               <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
             </svg>
           </button>
           <div id="DropDownMenu" class="dropdownlist absolute bg-gray-900 text-white right-0 mt-3 p-3 overflow-auto z-30 invisible">
-            <% if current_user.role == 1 %>
-              <%= link_to t(:control_panel), admin_root_path, class: "elative block py-6 px-2 lg:p-6 text-sm text-sm font-bold hover:text-ice-blue" %>
-            <% else %>
-              <%= link_to t(:cabinet), user_path(id: current_user.id), class: "elative block py-6 px-2 lg:p-6 text-sm text-sm font-bold hover:text-ice-blue" %>
-            <% end %>
-            <%= link_to t(:exit), logout_path, class: "elative block py-6 px-2 lg:p-6 text-sm text-sm font-bold hover:text-ice-blue" %>
+            <%# if current_user.role == 1 %>
+              <%#= link_to t(:control_panel), admin_root_path, class: "elative block py-6 px-2 lg:p-6 text-sm text-sm font-bold hover:text-ice-blue" %>
+            <%# else %>
+              <%#= link_to t(:cabinet), user_path(id: current_user.id), class: "elative block py-6 px-2 lg:p-6 text-sm text-sm font-bold hover:text-ice-blue" %>
+            <%# end %>
+            <%#= link_to t(:exit), logout_path, class: "elative block py-6 px-2 lg:p-6 text-sm text-sm font-bold hover:text-ice-blue" %>
           </div>
         </div>
 
 
-      <% else %>
-        <%= link_to 'enter', class: "relative block py-6 px-2 lg:p-6 text-white text-sm text-lg font-bold hover:text-ice-blue" do %>
-          <%= t(:partnership) %>
-        <% end %>
-      <% end %>
+      <%# else %>
+        <%#= link_to 'enter', class: "relative block py-6 px-2 lg:p-6 text-white text-sm text-lg font-bold hover:text-ice-blue" do %>
+          <%#= t(:partnership) %>
+        <%# end %>
+      <%# end %>
+-->
 
       <div class="relative inline-block">
         <button onclick="document.getElementById('langDropdown').classList.toggle('invisible')" class="drop-button relative block py-6 px-2 lg:p-6 text-white text-lg font-bold hover:text-ice-blue">

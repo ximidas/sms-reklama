@@ -62,4 +62,17 @@ Rails.application.configure do
 
   #Local domain availability
   config.hosts.clear
+
+  #SMTP
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+      :user_name => '2c9362d513b016',
+      :password => '51d3eb4e90f87c',
+      :address => 'smtp.mailtrap.io',
+      :domain => 'smtp.mailtrap.io',
+      :port => '2525',
+      :authentication => :cram_md5
+  }
+
 end

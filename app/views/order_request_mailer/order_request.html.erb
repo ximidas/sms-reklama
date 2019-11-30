@@ -1,0 +1,44 @@
+<html>
+
+<head>
+  <meta content = 'text/html; charset = UTF-8' http-equiv = 'Content-Type' />
+</head>
+
+<body>
+<h1>Новая заявка! От клиента: <%= @order_request.name %></h1>
+
+<p>
+  Поступила новая заявка
+</p>
+
+<p>
+  Имя: <%= @order_request.name %>
+</p>
+<p>
+ Связь: <%= @order_request.connection %>
+</p>
+<p>
+  Города: <%= @order_request.cities %>
+</p>
+<p>
+  Кол-во sms: <%= @order_request.sms_quantity %>
+</p>
+<p>
+  На сумму: <%= @order_request.price %>
+</p>
+<p>
+  Описание бизнеса: <%= @order_request.business_description %>
+</p>
+<p>
+  Описание целевой аудитории: <%= @order_request.target_audience_description %>
+</p>
+<p>
+  Тип: <%= @order_request.type_order %>
+</p>
+<p>
+  Дата и время: <%= @order_request.created_at.strftime("%d.%m.%Y %H:%M:%S") %>
+</p>
+<p>Обработать можно в админке!</p>
+
+</body>
+</html>

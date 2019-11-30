@@ -22,8 +22,10 @@ class VueController < ApplicationController
     @order_request.update(name: params[:name], connection: params[:connection], cities: params[:cities],
                           sms_quantity: params[:sms_quantity], price: params[:price],
                           business_description: params[:business_description],
-                          target_audience_description: params[:target_audience], type: params[:type])
+                          target_audience_description: params[:target_audience], type_order: params[:type], status: 0)
     @order_request.save
+
+    OrderRequestMailer.order_request(@order_request).deliver_now
 
     render json: {status: 200}
 

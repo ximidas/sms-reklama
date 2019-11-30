@@ -54,6 +54,8 @@ ro:
   business_describe_example: "Exemplu: Vânzare piese auto"
   target_audience_describe: "Descrieți pe scurt publicul țintă"
   target_audience_describe_example: "Exemplu: Bărbați cu vârstă între 20 și 60 de ani care au o mașină personală"
+  b2b_services: 'Afacerea dvs. este axat pe servicii B2B? Avem soluții pentru voi'
+  b2b_services_text: 'În baza noastră de date există 3.300 numere de telefon ale persoanelor juridice și ale directorilor companiilor'
   regions: 'Regiuni'
   categories: 'Categorii'
   category: 'Categorie'
@@ -110,7 +112,7 @@ ro:
   hit_target: 'Lovim ținta'
   hit_target_text: 'În baza noastră de date nu este doar un număr haotic de numere de telefon diferite. Baza noastră este sortată minuțios și structurată pe regiuni și categorii. Lucrând cu dvs., definim publicul țintă necesar și trimitem mesaje numai acelor persoane pentru care oferta dvs. va fi interesantă. Datorită acestei abordări, conversia clienților crește.'
   statistics_analysis: 'Statistici și analize'
-  statistics_analysis_text: 'După fiecare campanie, comunicăm cu clienții și analizăm conversia obțiinuta, ceea ce ar reduce mai mult baza noastră de date sub sarcinile clientului în viitor. Am colectat numere din surse deschise și am efectuat sondaje sociale, așa că știm cine sunt deținătorii numere de telefon din baza noastră și ce interese au. Suntem o companie IT axat pe marketing modern, Big Data, statistici și analize.'
+  statistics_analysis_text: 'După fiecare campanie, comunicăm cu clienții și analizăm conversia obțiinuta, ceea ce ar reduce mai mult baza noastră de date sub sarcinile clientului în viitor. Am colectat numere din surse deschise și am efectuat sondaje sociale, așa că știm cine sunt deținătorii numere de telefon din baza noastră și ce interese au.'
   communications: 'Comunicare'
   customer_attitude: 'Atitudine faţa de client'
   work_with_professionals: 'Lucraţi cu profesioniști'
