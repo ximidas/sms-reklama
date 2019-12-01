@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: sms_reklama_production
-  username: postgres
-  password: <%= ENV['SMS_REKLAMA_DATABASE_PASSWORD'] %>
+  username: sms_reklama
+  password: HS8sa231%ds&dsa&dasd$(dssaj1ewS!3
