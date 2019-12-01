@@ -69,7 +69,7 @@
                                 </ul>
                             </div>
                             <div class="block flex items-center p-8  uppercase">
-                            <button @click="showModal1 = true" class="mt-3 text-lg uppercase font-semibold
+                            <button @click="showModal1 = true" class="mt-3 text-lg font-semibold
 	bg-black w-full text-white rounded-lg
 	px-6 py-3 block shadow-xl hover:bg-gray-700">
                                 {{t('select')}}
