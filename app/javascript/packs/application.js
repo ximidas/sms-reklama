@@ -2,7 +2,7 @@
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
-//production: RAILS_ENV=production bundle exec rails webpacker:compile
+//production: before make RAILS_ENV=production rake assets:precompile and after: RAILS_ENV=production bundle exec rails webpacker:compile
 
 require('@rails/ujs').start()
 require('turbolinks').start()
