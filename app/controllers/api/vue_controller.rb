@@ -25,7 +25,9 @@ class VueController < ApplicationController
                           target_audience_description: params[:target_audience], type_order: params[:type], status: 0)
     @order_request.save
 
+=begin
     OrderRequestMailer.order_request(@order_request).deliver_now
+=end
 
     render json: {status: 200}
 
