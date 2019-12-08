@@ -109,4 +109,19 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+  #SMTP
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+      :user_name => 'sms@sms-reklama.com',
+      :password => 'smN-77Y-weR-Rra',
+      :address => 'smtp.yandex.com',
+      :domain => 'smtp.yandex.com',
+      :port => '465',
+      :smtp_tls => true,
+      :smtp_enable_starttls_auto => true,
+      :smtp_openssl_verify_mode => 'peer',
+      :authentication => :cram_md5
+  }
 end
